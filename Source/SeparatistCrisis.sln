@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeparatistCrisis", "SeparatistCrisis\SeparatistCrisis.csproj", "{81FA5DA9-C07B-4454-86B3-B2E477E9A830}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5C7E3151-790F-44D8-A5A2-39D3C7448123}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{81FA5DA9-C07B-4454-86B3-B2E477E9A830}.Release|x64.Build.0 = Release|x64
 		{81FA5DA9-C07B-4454-86B3-B2E477E9A830}.Debug|x64.ActiveCfg = Debug|x64
 		{81FA5DA9-C07B-4454-86B3-B2E477E9A830}.Debug|x64.Build.0 = Debug|x64
+		{5C7E3151-790F-44D8-A5A2-39D3C7448123}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5C7E3151-790F-44D8-A5A2-39D3C7448123}.Debug|x64.Build.0 = Debug|Any CPU
+		{5C7E3151-790F-44D8-A5A2-39D3C7448123}.Release|x64.ActiveCfg = Release|Any CPU
+		{5C7E3151-790F-44D8-A5A2-39D3C7448123}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

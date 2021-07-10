@@ -1,10 +1,11 @@
-﻿using TaleWorlds.MountAndBlade;
-
-namespace SeparatistCrisis
+﻿namespace SeparatistCrisis
 {
+    using TaleWorlds.MountAndBlade;
+
+    /// <inheritdoc />
     public class Main : MBSubModuleBase
     {
-
+        /// <inheritdoc/>
         protected override void OnSubModuleLoad()
         {
             // Stuff
@@ -21,14 +22,14 @@ namespace SeparatistCrisis
             }
             CustomGame customGame = (CustomGame)game.GameType;
             string filePath = Path.Combine("..", "..", "Modules", "SeparatistCrisis", "ModuleData", "custom_battle_scenes.xml");
-            
+
             if (File.Exists(filePath))
             {
                 customGame.LoadCustomBattleScenes(filePath);
             }
         }
 
-        
+
         ##### This code changes the ruling clan of the southern empire on campaign start ######
         public override void OnGameInitializationFinished(Game game)
         {

@@ -1,43 +1,46 @@
+﻿// ReSharper disable CheckNamespace - all ScriptComponentBehaviour classes inside this namespace get picked up automatically by bannerlords engine
 #define TRACE
-
-using System;
-using System.Collections.Generic;
-using SeparatistCrisis.Util;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.Engine;
-using TaleWorlds.Library;
-using TaleWorlds.ObjectSystem;
-
 namespace TaleWorlds.MountAndBlade
 {
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using SeparatistCrisis.Util;
+    using TaleWorlds.CampaignSystem;
+    using TaleWorlds.Engine;
+    using TaleWorlds.Library;
+    using TaleWorlds.ObjectSystem;
+
+    [SuppressMessage("ReSharper", "SA1401", Justification = "<Variables need to be exposed for Editor>")]
     public class PartyTeleportation : ScriptComponentBehaviour
     {
-        public float radius = 1f;
-        public bool showDebugInfo = true;
-        public int numVerts = 12;
+        // ReSharper disable MemberCanBePrivate.Global - needed to expose values inside the modding tools
+        public float Radius = 1f;
+        public bool ShowDebugInfo = true;
+        public int NumVerts = 12;
+
         private Vec3 TargetPosition { get; set; } = Vec3.Zero;
-    
+
         private Vec3 Position { get; set; }
 
         protected override void OnInit()
         {
             base.OnInit();
-            base.SetScriptComponentToTick(this.GetTickRequirement());
+            SetScriptComponentToTick(GetTickRequirement());
             Setup();
         }
 
         protected override void OnEditorInit()
         {
             base.OnEditorInit();
-            base.SetScriptComponentToTick(this.GetTickRequirement());
+            SetScriptComponentToTick(GetTickRequirement());
             Setup();
         }
-        
-        protected override ScriptComponentBehaviour.TickRequirement GetTickRequirement()
+
+        protected override TickRequirement GetTickRequirement()
         {
-            return ScriptComponentBehaviour.TickRequirement.Tick;
+            return TickRequirement.Tick;
         }
-        
+
         protected override void OnTick(float dt)
         {
             // check performance - we might need to optimize this part
@@ -58,11 +61,11 @@ namespace TaleWorlds.MountAndBlade
         {
             Setup();
             MBDebug.ClearRenderObjects();
-            if (showDebugInfo)
+            if (ShowDebugInfo)
             {
                 Vec3 direction = TargetPosition - Position;
-                MBDebug.RenderDebugLine(Position, direction, UInt32.MaxValue, false, dt);
-                DebugRender.RenderCircle(Position, radius, numVerts, dt);
+                MBDebug.RenderDebugLine(Position, direction, uint.MaxValue, false, dt);
+                DebugRender.RenderCircle(Position, Radius, NumVerts, dt);
             }
         }
 
@@ -80,8 +83,8 @@ namespace TaleWorlds.MountAndBlade
             float distX = party.GetPosition2D.x - Position.x;
             float distY = party.GetPosition2D.y - Position.y;
             float distance = (distX * distX) + (distY * distY);
-            
-            return distance <= radius * radius;
+
+            return distance <= Radius * Radius;
         }
     }
 }

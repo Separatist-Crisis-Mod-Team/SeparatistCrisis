@@ -1,6 +1,11 @@
 /Source/*
 !/Source/SeparatistCrisis
+!/Source/UnitTests
 
 /Source/SeparatistCrisis/.vs
 /Source/SeparatistCrisis/obj
 /Source/SeparatistCrisis/bin
+
+/Source/UnitTests/.vs
+/Source/UnitTests/obj
+/Source/UnitTests/bin
