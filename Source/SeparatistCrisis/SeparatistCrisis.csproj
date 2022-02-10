@@ -26,6 +26,7 @@
     <Compile Include="Patches\DeactivateVanillaCultureSelection.cs" />
     <Compile Include="Patches\FixCrosshair.cs" />
     <Compile Include="Patches\ReplaceCharacterCreation.cs" />
+    <Compile Include="Patches\ShieldHitPatch.cs" />
     <Compile Include="ScCharacterCreationContent.cs" />
     <Compile Include="ScriptComponents\PartyTeleportation.cs" />
     <Compile Include="Util\DebugRender.cs" />
